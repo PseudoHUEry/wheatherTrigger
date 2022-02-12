@@ -1,4 +1,0 @@
-NODE_ENV=staging
-PORT=3000
-LINKDATABASE=mongodb://localhost:27017/weather
-HASH=385c1672c6891ca92b99b5046c73fb17
