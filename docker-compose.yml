@@ -1,0 +1,25 @@
+version: '3'
+services:
+  server:
+    container_name: wheaterapi
+    build: .
+    volumes:
+      - ./app
+      - ./node_modules:/app/node_modules
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      HASH : b98bb04491563d10dc2bd24d02e3d48c
+      TIMEREQUEST : 300
+    depends_on:
+      -db
+    links:
+      -db
+    ports: 
+      - '9000:9000'
+  
+  db: 
+    image: mongo:4.4.6
+    container_name: database
+    volumes:
+      - ./data/db:/data/db
