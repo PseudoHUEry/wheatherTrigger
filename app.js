@@ -1,9 +1,8 @@
-const dotenv = require('dotenv')
+require('dotenv/config')
 const moment = require('moment-timezone')
 const climaTempo = require('./helper/requestClimatempo')
 const app = require('express')()
 const startDatabase = require('./bd/index')
-dotenv.config(process.cwd() + '/.env')
 console.log(process.cwd() + '/.env')
 moment.tz.setDefault('America/Sao_Paulo')
 setTimeout(() => {
