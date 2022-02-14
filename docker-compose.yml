@@ -11,8 +11,7 @@ services:
       PORT: 3000
       HASH: b98bb04491563d10dc2bd24d02e3d48c
       TIMEREQUEST: 300
-    networks:
-      - database
+      LINKDATABASE: mongodb://127.0.0.1:27017/weather
     depends_on:
       - db
     links:
@@ -25,11 +24,7 @@ services:
     container_name: database
     ports:
       - '27017:27017'
-    networks:
-      - database
+
     volumes:
       - ./data/db:/data/db
 
-networks:
-  database: 
-     driver: bridge
