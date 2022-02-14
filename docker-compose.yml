@@ -30,4 +30,4 @@ services:
 
 networks:
   wheaternet:
-    driver: overlay
+    driver: bridge
