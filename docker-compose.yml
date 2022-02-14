@@ -11,7 +11,7 @@ services:
       PORT: 3000
       HASH: b98bb04491563d10dc2bd24d02e3d48c
       TIMEREQUEST: 300
-      LINKDATABASE: mongodb://127.0.0.1:27017/weather
+      LINKDATABASE: mongodb://0.0.0.0:27017/weather
     depends_on:
       - db
     networks:
