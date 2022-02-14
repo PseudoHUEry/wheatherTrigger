@@ -4,8 +4,7 @@ services:
     container_name: wheaterapi
     build: .
     volumes:
-      - ./
-      - ./node_modules:./node_modules
+      - ./:/
     environment:
       NODE_ENV: development
       PORT: 3000
