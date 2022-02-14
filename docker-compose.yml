@@ -12,6 +12,7 @@ services:
       HASH: b98bb04491563d10dc2bd24d02e3d48c
       TIMEREQUEST: 300
     networks:
+      - app
       - database
     depends_on:
       - db
@@ -19,9 +20,7 @@ services:
       - db
     ports:
       - '9000:9000'
-  networks:
-    database:
-      driver: host
+ 
   db:
     image: mongo:4.4.6
     container_name: database
@@ -31,3 +30,9 @@ services:
       - database
     volumes:
       - ./data/db:/data/db
+
+networks:
+  app:
+    driver: host
+  database: 
+     driver: bridge
