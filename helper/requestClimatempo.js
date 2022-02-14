@@ -19,6 +19,6 @@ module.exports = async () => {
     dataInspect:moment(data.data.date),
    }
    await Clima.create(entity)
-   setTimeout(() => require('./requestClimatempo.js')(), moment().diff(moment().add(process.env.TIMEREQUEST,'seconds'),'milliseconds')*-1)
+   setTimeout(() => require('./requestClimatempo.js')(), moment().diff(moment().add(process.env.TIMEREQUEST||300,'seconds'),'milliseconds')*-1)
    console.log(`Clima: ${entity.condition}, humidade: ${entity.humidity}, temperatura: ${entity.temperature}, sensação: ${entity.sensation}.`)
 };
