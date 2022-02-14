@@ -16,7 +16,6 @@ services:
       - db
     networks:
       - backend
-      - host
     ports:
       - '9000:9000'
  
