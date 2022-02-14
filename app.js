@@ -10,11 +10,11 @@ app.use("/", (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-  startDatabase().then((x) => {
-    setTimeout(() => {
+  setTimeout(() => {
+    startDatabase().then((x) => {
       climaTempo();
-    }, 1000);
+    }, 5000);
     console.log("Banco de Dados, Conectado");
+    console.log(`Servidor online! PORTA: ${process.env.PORT}`);
   });
-  console.log(`Servidor online! PORTA: ${process.env.PORT}`);
 });
