@@ -9,18 +9,22 @@ services:
     environment:
       NODE_ENV: development
       PORT: 3000
-      HASH : b98bb04491563d10dc2bd24d02e3d48c
-      TIMEREQUEST : 300
+      HASH: b98bb04491563d10dc2bd24d02e3d48c
+      TIMEREQUEST: 300
+    networks:
+      - database
     depends_on:
       - db
     links:
-     - db
-    ports: 
+      - db
+    ports:
       - '9000:9000'
-  db: 
+  db:
     image: mongo:4.4.6
     container_name: database
     ports:
       - '27017:27017'
+    networks:
+      - database
     volumes:
       - ./data/db:/data/db
