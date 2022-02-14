@@ -16,9 +16,11 @@ services:
     links:
      - db
     ports: 
-      - '9000:9000'
+      - 9000:9000
   db: 
     image: mongo:4.4.6
     container_name: database
+    ports:
+      - 27017:27017
     volumes:
       - ./data/db:/data/db

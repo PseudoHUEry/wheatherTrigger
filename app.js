@@ -1,3 +1,4 @@
+require('dotenv/config')
 const moment = require('moment-timezone')
 const climaTempo = require('./helper/requestClimatempo')
 const app = require('express')()
