@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 RUN npm config set registry="http://registry.npmjs.org/"
-RUN npm install --production
+RUN npm install --production && npm install
 
 EXPOSE 3000
 
