@@ -1,11 +1,12 @@
-FROM node
+FROM node:16.13.2
 
 WORKDIR /app
 
-COPY . ./app
+COPY . .
 
+RUN npm config set registry="http://registry.npmjs.org/"
 RUN npm install --production
 
 EXPOSE 3000
 
-CMD [ "npm", "install", "node", "app.js" ]
+CMD [ "node", "app.js" ]
