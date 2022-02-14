@@ -32,4 +32,4 @@ services:
 
 networks:
   database: 
-     driver: host
+     driver: bridge
