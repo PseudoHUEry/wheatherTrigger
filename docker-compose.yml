@@ -14,7 +14,7 @@ services:
     depends_on:
       -db
     links:
-      -db
+     - [db]
     ports: 
       - '9000:9000'
   db: 
