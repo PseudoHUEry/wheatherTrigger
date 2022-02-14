@@ -33,5 +33,3 @@ services:
 networks:
   backend:
     driver: bridge
-  host: 
-    driver: host
