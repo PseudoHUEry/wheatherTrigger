@@ -12,9 +12,9 @@ services:
       HASH : b98bb04491563d10dc2bd24d02e3d48c
       TIMEREQUEST : 300
     depends_on:
-      - ['db']
+      - db
     links:
-     - [db]
+     - ['db']
     ports: 
       - '9000:9000'
   db: 
