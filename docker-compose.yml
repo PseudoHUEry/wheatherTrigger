@@ -14,8 +14,9 @@ services:
       LINKDATABASE: mongodb://127.0.0.1:27017/weather
     depends_on:
       - db
-    links:
-      - db
+    networks:
+      - backend
+      - host
     ports:
       - '9000:9000'
  
@@ -24,7 +25,13 @@ services:
     container_name: database
     ports:
       - '27017:27017'
-
+    networks:
+      - backend
     volumes:
       - ./data/db:/data/db
 
+networks:
+  backend:
+    driver: bridge
+  host: 
+    driver: host

@@ -5,7 +5,7 @@ WORKDIR /
 COPY . .
 
 RUN npm set registry=https://registry.npmjs.org/
-RUN npm install --production && npm install
+RUN npm install --production && npm install && npm install -g npm@8.5.0
 
 EXPOSE 3000
 
